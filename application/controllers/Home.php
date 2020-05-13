@@ -39,6 +39,9 @@ class Home extends CI_Controller {
         $this->parser->parse('_Layout',$data);
 		//$this->load->view('welcome_message');
 	}
+
+
+
 	public function form()
 	{
         $data["subview"]="site/form";

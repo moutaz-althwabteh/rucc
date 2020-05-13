@@ -33,7 +33,7 @@ class Consult_M extends CI_Model
 
         );
         $x = $this->dbconn->excuteProcedures('CONSULT_PKG', 'CONSULT_SELECT', $params);
-        return $x;
+        return $x['records'];
     }
 
     public function Con_Select_BY($P_user_id)

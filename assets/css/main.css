@@ -1853,7 +1853,7 @@ section.templates-section {
 }
 
 .inner-header a:hover {
-    color: #4aa3f1 !important;
+    color: #4aa3f1;
 }
 
 .article {
@@ -1970,6 +1970,157 @@ section.templates-section {
     content: none;
 }
 
+#drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+#drop-area.highlight {
+    border-color: purple;
+}
+
+.my-form {
+    margin-bottom: 10px;
+}
+
+#gallery {
+    margin-top: 10px;
+}
+
+#gallery img {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.button-upload {
+    display: inline-block;
+    padding: 10px;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.button-upload:hover {
+    background: #ddd;
+}
+
+#fileElem {
+    display: none;
+}
+
+.answered {
+    background: #2396f1;
+    color: white;
+    border-color: #2396f1;
+}
+
+.answered:hover {
+    background: #1687e4;
+    color: white;
+    border-color: #1687e4;
+}
+
+.not-answered {
+    cursor: unset;
+}
+
+thead {
+    background: #5cb85c;
+    color: white;
+}
+
+.registred-users .user img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.registred-users {
+    background: #ececec;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+span.welcome-txt {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.user-components {
+    display: flex;
+    align-items: center;
+}
+
+.user {
+    width: 28%;
+    position: relative;
+}
+
+.user:after {
+    content: '';
+    width: 1px;
+    height: 25px;
+    background: #d4d4d4;
+    position: absolute;
+    left: 20px;
+    top: 5px;
+}
+
+.user-links a {
+    padding-left: 15px;
+}
+
+.contact-card .contact-info li {
+    padding: 20px;
+    border-radius: 4px;
+    color: white;
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.color-one {
+    background: #5cb85c;
+}
+
+ul.contact-info p {
+    font-size: 18px;
+    color: white;
+}
+
+ul.contact-info b {
+    font-size: 16px;
+    color: white;
+    font-weight: 200;
+}
+
+.color-two {
+    background: #2196F3;
+}
+
+.contact-informations h3 {
+    font-weight: 600;
+    font-size: 24px;
+    color: #5cb85c;
+}
+
+.send-message h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #505050;
+}
+
+.contact-informations {
+    padding: 20px;
+    background: #efefef;
+    border-radius: 6px;
+}
 .error{
     color: red;
     font-size: xx-small;
