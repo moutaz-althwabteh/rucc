@@ -1,0 +1,332 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>مركز الاستشارات القانونية</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Almarai:400,700&display=swap" rel="stylesheet">
+
+    <style>
+    #drop-area {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  margin: 10px auto;
+  padding: 20px;
+}
+#drop-area.highlight {
+  border-color: purple;
+}
+p {
+  margin-top: 0;
+}
+.my-form {
+  margin-bottom: 10px;
+}
+#gallery {
+  margin-top: 10px;
+}
+#gallery img {
+  width: 150px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.button {
+  display: inline-block;
+  padding: 10px;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.button:hover {
+  background: #ddd;
+}
+#fileElem {
+  display: none;
+}
+</style>
+
+</head>
+<body>
+	<section class="banner inner" role="banner">
+        <header id="header">
+            <div class="header-content clearfix">
+                <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+                <nav class="navigation" role="navigation">
+                    <ul class="primary-nav">
+                        <li><a href="#features">الرئيسية</a></li>
+                        <li><a href="#works">استشارات قانونية</a></li>
+                        <li><a href="#teams">المكتبة القانونية</a></li>
+                        <li><a href="#teams">الخدمات الالكترونية</a></li>
+                        <li><a href="#testimonials">وزارة الداخلية</a></li>
+                        <li><a href="#download">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="nav-toggle">Menu<span></span></a>
+            </div><!-- header content -->
+        </header><!-- header -->
+        <div class="container">
+                <div class="banner-text text-left inner">
+                    <h1><span>استشارة مجانية</span> تحدث مع اخصائي في القانون</h1>
+                </div><!-- banner text -->
+        </div>
+    </section><!-- banner -->
+   
+    <section class="consultation-one">
+       <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box-title"> 
+                    <i class="fa fa-legal"></i> استشارة قانونية
+                </div>
+            </div>     
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">نوع المعاملة أو الاستشارة</label>
+                    <select name="select" class="form-control" id="select1">
+                        <option value="1">اختر</option>
+                        <option value="2">استشارة فنية</option>
+                        <option value="3">استشارة تقنية</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="">رقم الجوال</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">البريد الالكتروني</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">كتابة الموضوع</label>
+                    <textarea name="subject" id="subject" rows="10" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for=""> مرفقات الاستشارة</label>
+                    <!-- <button class="btn- btn-primary btn-xs"><i class="fa fa-plus"></i></button> -->
+
+                    <div id="drop-area">
+                        <form class="my-form">
+                          <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                          <label class="button" for="fileElem">قم باختيار الملفات المرفقة</label>
+                        </form>
+                        <progress id="progress-bar" max=100 value=0></progress>
+                        <div id="gallery"></div>
+                      </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">خصوصية النشر</label>
+                    <div class="checkbox1">
+                        <label class="pure-material-checkbox">
+                            <input type="checkbox">
+                            <span>السماح بنشر الاستشارة</span>
+                          </label>
+    
+                          <label class="pure-material-checkbox">
+                            <input type="checkbox">
+                            <span>غير مسموح بنشر الاستشارة</span>
+                          </label>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <button class="btn btn-success btn-xl"><i class="fa fa-check"></i> ارسال الطلب</button>
+                </div>
+            </div>
+        </div>
+       </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h5>عن المركز</h5>
+                        <p>أوروبا الضغوط بل دنو. أن وبحلول الإمتعاض قام. نفس بل كردة العدّ استرجاع, يكن ٣٠ وأكثرها الأثنان, جهة كل ووصف وبداية وايرلندا. أم جدول تكتيكاً بريطانيا-فرنسا بلا, تم اسبوعين ولاتّساع دول, المسرح الجنرال الإيطالية كما ما.
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h5>اتصل بنا</h5>
+                        <p>رقم الهاتف: 0599981016<br>البريد الالكتروني: info@moi.gov.ps <br>العنوان:  قطاع غزة، دوار انصار، مركز الاستشارات القانونية</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h5>شبكات التواصل الاجتماعي</h5>
+                        <ul class="footer-share">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div><!-- footer top -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="col-md-12">
+                    <p>جميع الحقوق محفوظة © 2020 مركز الاستشارات القانونية.<br> تطوير <i class="fa fa-heart pulse"></i>  <a href="#">الادارة العامة للحاسوب ونظم المعلومات</a></p>
+                </div>
+            </div>
+        </div>
+    </footer><!-- footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/retina.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+            // ************************ Drag and drop ***************** //
+        let dropArea = document.getElementById("drop-area")
+
+        // Prevent default drag behaviors
+        ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, preventDefaults, false)   
+        document.body.addEventListener(eventName, preventDefaults, false)
+        })
+
+        // Highlight drop area when item is dragged over it
+        ;['dragenter', 'dragover'].forEach(eventName => {
+        dropArea.addEventListener(eventName, highlight, false)
+        })
+
+        ;['dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, unhighlight, false)
+        })
+
+        // Handle dropped files
+        dropArea.addEventListener('drop', handleDrop, false)
+
+        function preventDefaults (e) {
+        e.preventDefault()
+        e.stopPropagation()
+        }
+
+        function highlight(e) {
+        dropArea.classList.add('highlight')
+        }
+
+        function unhighlight(e) {
+        dropArea.classList.remove('active')
+        }
+
+        function handleDrop(e) {
+        var dt = e.dataTransfer
+        var files = dt.files
+
+        handleFiles(files)
+        }
+
+        let uploadProgress = []
+        let progressBar = document.getElementById('progress-bar')
+
+        function initializeProgress(numFiles) {
+        progressBar.value = 0
+        uploadProgress = []
+
+        for(let i = numFiles; i > 0; i--) {
+            uploadProgress.push(0)
+        }
+        }
+
+        function updateProgress(fileNumber, percent) {
+        uploadProgress[fileNumber] = percent
+        let total = uploadProgress.reduce((tot, curr) => tot + curr, 0) / uploadProgress.length
+        console.debug('update', fileNumber, percent, total)
+        progressBar.value = total
+        }
+
+        function handleFiles(files) {
+        files = [...files]
+        initializeProgress(files.length)
+        files.forEach(uploadFile)
+        files.forEach(previewFile)
+        }
+
+        function previewFile(file) {
+        let reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onloadend = function() {
+            let img = document.createElement('img')
+            img.src = reader.result
+            document.getElementById('gallery').appendChild(img)
+        }
+        }
+
+        function uploadFile(file, i) {
+        var url = 'https://api.cloudinary.com/v1_1/joezimim007/image/upload'
+        var xhr = new XMLHttpRequest()
+        var formData = new FormData()
+        xhr.open('POST', url, true)
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+
+        // Update progress (can be used to show progress indicator)
+        xhr.upload.addEventListener("progress", function(e) {
+            updateProgress(i, (e.loaded * 100.0 / e.total) || 100)
+        })
+
+        xhr.addEventListener('readystatechange', function(e) {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+            updateProgress(i, 100) // <- Add this
+            }
+            else if (xhr.readyState == 4 && xhr.status != 200) {
+            // Error. Inform the user
+            }
+        })
+
+        formData.append('upload_preset', 'ujpu6gyk')
+        formData.append('file', file)
+        xhr.send(formData)
+        }
+    </script>
+</body>
+</html>
