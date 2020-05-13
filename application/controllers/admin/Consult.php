@@ -60,27 +60,13 @@ class Consult extends AdminBase
                 $this->input->post('CON_SEQ'),
                 $this->input->post('CON_NAME'),
                 $this->input->post('CON_TYPE'),
-                $this->input->post('SUB_TYPE'),
                 $this->input->post('CON_DESC'),
                 $this->input->post('PRIVACY'),
-                $this->input->post('filename'),
-                1
+                "",
+                1,
+                $this->input->post('MOBILE'),
+                $this->input->post('EMAIL')
             );
-            $this->do_upload();
-			if ($y["status"] > 0) {
-				$z = $this->notify->NOTIFY_SAVE(
-					1//$this->session->userdata("USER_ID")
-					, 111
-					, 2
-					, "طلب استشارة"
-					, "admin/Consult"
-					, 3
-					, 22
-					, $y['status']
-					, 1
-				);
-			}
-
             header('Content-Type: application/json');
             echo json_encode($y);
         }

@@ -38,6 +38,16 @@ class Setting_M extends CI_Model
         return $x;
     }
 
+    public function GET_CODE_BY_PARENT($P_PARENT_ID)
+    {
+        $params = array(
+            array('name' => ':P_PARENT_ID', 'value' => $P_PARENT_ID, 'type' => '', 'length' => 100),
+            array('name' => ':P_CUR', 'value' => 'records', 'type' => 'cur', 'length' => -1),
+        );
+        $x = $this->dbconn->excuteProcedures('COMMON_CODE_PKG', 'GET_CODE_BY_PARENT', $params);
+        return $x['records'];
+    }
+
 }
 
 ?>

@@ -2,18 +2,19 @@
 class Consult_M extends CI_Model
 {
 
-    public function Con_Save($P_CON_SEQ, $P_CON_NAME,$P_CON_TYPE,$P_SUB_TYPE , $P_CON_DESC , $P_PRIVACY
-        , $P_ATTCHMENT , $P_USER_ID)
+    public function Con_Save($P_CON_SEQ, $P_CON_NAME,$P_CON_TYPE , $P_CON_DESC , $P_PRIVACY
+        , $P_ATTCHMENT , $P_USER_ID, $P_MOBILE, $P_EMAIL)
     {
         $params = array(
             array('name' => ':P_CON_SEQ', 'value' => $P_CON_SEQ, 'type' => '', 'length' => -1),
             array('name' => ':P_CON_NAME', 'value' => $P_CON_NAME, 'type' => '', 'length' => 100),
             array('name' => ':P_CON_TYPE', 'value' => $P_CON_TYPE, 'type' => '', 'length' => 100),
-            array('name' => ':P_SUB_TYPE', 'value' => $P_SUB_TYPE, 'type' => '', 'length' => 100),
-            array('name' => ':P_CON_DESC', 'value' => $P_CON_DESC, 'type' => '', 'length' => 100),
+            array('name' => ':P_CON_DESC', 'value' => $P_CON_DESC, 'type' => '', 'length' => 4000),
             array('name' => ':P_PRIVACY', 'value' => $P_PRIVACY, 'type' => '', 'length' => 100),
             array('name' => ':P_ATTCHMENT', 'value' => $P_ATTCHMENT, 'type' => '', 'length' => 100),
             array('name' => ':P_USER_ID', 'value' => $P_USER_ID, 'type' => '', 'length' => 100),
+            array('name' => ':P_MOBILE', 'value' => $P_MOBILE, 'type' => '', 'length' => 100),
+            array('name' => ':P_EMAIL', 'value' => $P_EMAIL, 'type' => '', 'length' => 100),
             array('name' => ':p_msg', 'value' => 'message', 'type' => '', 'length' => 100),
             array('name' => ':p_status', 'value' => 'status', 'type' => '', 'length' => 100),
         );

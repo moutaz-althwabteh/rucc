@@ -28,7 +28,7 @@
         </div>
         <form method="post" id="SaveCon" data-toggle="ajaxform">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for=""> عنوان الاستشارة </label>
                     <input type="text" class="form-control" id="CON_NAME" name="CON_NAME">
@@ -39,23 +39,28 @@
                 <div class="form-group">
                     <label for="">نوع المعاملة أو الاستشارة</label>
                     <select class="form-control" id="CON_TYPE" name="CON_TYPE">
-                        <option value="1">اختر</option>
-                        <option value="2">استشارة فنية</option>
-                        <option value="3">استشارة تقنية</option>
+                        <option value="">اختر</option>
+                        <?php 
+                            foreach ($type as $t) {
+                                ?>
+                                <option value="<?php echo $t["CODE_ID"] ?>"><?php echo $t["DESC_AR"] ?></option>
+                                <?php
+                            }
+                        ?>
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="">رقم الجوال</label>
-                    <input type="text" class="form-control" id="" name="" VALUE="059777777">
+                    <input type="text" class="form-control" id="MOBILE" name="MOBILE" VALUE="">
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="">البريد الالكتروني</label>
-                    <input type="text" class="form-control" value="A@A.COM">
+                    <input type="text" class="form-control" value="" id="EMAIL" name="EMAIL">
                 </div>
             </div>
 
@@ -69,23 +74,7 @@
                 </div>
             </div>
 
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for=""> مرفقات الاستشارة</label>
-                    <!-- <button class="btn- btn-primary btn-xs"><i class="fa fa-plus"></i></button> -->
-
-                    <div id="drop-area">
-                        <form class="my-form">
-                          <input type="file" id="ATTCHMENT" multiple accept="/*"  name="ATTCHMENT">
-                          <input type="hidden" id="filename" name="filename">
-                          <label class="button" for="fileElem">قم باختيار الملفات المرفقة</label>
-                        </form>
-                        <progress id="progress-bar" max=100 value=0></progress>
-                        <div id="gallery"></div>
-                      </div>
-
-                </div>
-            </div>
+         
 
             <div class="col-md-12">
                 <div class="form-group">

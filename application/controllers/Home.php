@@ -42,9 +42,10 @@ class Home extends CI_Controller {
 	public function form()
 	{
         $data["subview"]="site/form";
-        $data['js']="/js/Consult";
-        $this->parser->parse('_Layout',$data);
-		//$this->load->view('welcome_message');
+		$data['js']="/js/site/Consult";
+		$data['type']=$this->Set->GET_CODE_BY_PARENT("18978");
+		
+        $this->parser->parse('_Layout2',$data);
 	}
 
     public function Consult()
@@ -72,10 +73,7 @@ class Home extends CI_Controller {
 
 		$start= $this->input->get("per_page");
 		if($start<0) $start=0;
-		//$q=0;//$this->input->get("q");
 		$totalCount= $this->Mod->MODEL_COUNT('COUNT_MODEL'); 
-	////	var_dump($totalCount);
-	//	die;
 		$rowsPerPage = 5;
 		if($start>$totalCount['COUNT_MODEL'])
 			$start=(ceil($totalCount/$rowsPerPage)-1)*$rowsPerPage;
@@ -84,7 +82,6 @@ class Home extends CI_Controller {
 		$this->pagerSetting['per_page'] = $rowsPerPage;
 		$this->pagerSetting['page_query_string'] = TRUE;
 		$this->pagination->initialize($this->pagerSetting);
-		//$data["q"]=$q;
         $data["All_Mod"] = $this->Mod->MODEL_SELECT(1,$start,$rowsPerPage);
         $data["subview"] = "site/Show_templates";
         $this->parser->parse('_Layout', $data);
@@ -94,7 +91,6 @@ class Home extends CI_Controller {
     {
 		$start=$this->input->get("per_page");
 		if($start<0) $start=0;
-		//$q=0;//$this->input->get("q");
 		$totalCount= $this->Con->CONSULT_COUNT();
 		$rowsPerPage = 5;
 		if($start>$totalCount)
