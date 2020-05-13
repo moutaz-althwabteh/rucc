@@ -45,17 +45,6 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="">نوع الاستشارة</label>
-                    <select  class="form-control" id="SUB_TYPE" name="SUB_TYPE">
-                        <option value="1">اختر</option>
-                        <option value="2">استشارة فنية</option>
-                        <option value="3">استشارة تقنية</option>
-                    </select>
-                </div>
-            </div>
-
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="">رقم الجوال</label>
@@ -105,11 +94,6 @@
                         <label class="pure-material-checkbox">
                             <input type="checkbox" id="PRIVACY" name="PRIVACY" value="1">
                             <span>السماح بنشر الاستشارة</span>
-                          </label>
-    
-                          <label class="pure-material-checkbox" id="PRIVACY" name="PRIVACY" value="-1">
-                            <input type="checkbox">
-                            <span>غير مسموح بنشر الاستشارة</span>
                           </label>
                     </div>
                    
