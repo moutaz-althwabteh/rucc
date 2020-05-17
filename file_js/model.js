@@ -44,15 +44,7 @@ var ModTb = function () {
             ],
             "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
 
-                if (aData.ISACTIVE == 0) {
-                    $('td', nRow).css('background-color', '#f2dede');
-                    $(nRow).addClass('wobble-vertical');
-
-                } else {
-                    $('td', nRow).css('background-color', '#dff0d8');
-                    $(nRow).addClass('wobble-vertical');
-
-                }
+            
             }
         },
         refresh: function () {
@@ -173,7 +165,9 @@ ModTb.init();
 
 
 var rebind_Mod_table = function (result, form) {
-    $(form).find('input').val('');
+    $('form').find('input').val('');
+    $('form').find('textarea').val('');
+    $('form').find('select').val('');
         ModTb.refresh();
     }
 

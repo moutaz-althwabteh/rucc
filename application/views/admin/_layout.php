@@ -56,7 +56,12 @@ $notify = $this->load->model('Notification_M', 'notify');
 
 
         <link rel="shortcut icon" href="assets\global\plugins\datatables\images\favicon.ico" /> </head>
-
+            <style>
+                .error{
+                    color: red;
+                    font-size: xx-small;
+                }
+            </style>
 
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
 
@@ -191,28 +196,30 @@ $notify = $this->load->model('Notification_M', 'notify');
             <div class="page-sidebar-wrapper">
                 <div class="page-sidebar navbar-collapse collapse">
                     <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
-
+                    <li class="nav-item  ">
+                                    <a href="admin/Contact" class="nav-link ">
+                                        <span class="title">تواصل معنا</span>
+                                    </a>
+                                </li>
 						<?php
 						$Display_Nav = $this->permission->DISPLAY_NAV(1, 0);
 						foreach ($Display_Nav as $navb)
 							$cnt = count($navb);
-						// echo $cnt;
-						for ($i = 0; $i < $cnt; $i++) {
+						    for ($i = 0; $i < $cnt; $i++) {
 
-						$openli="";
-						$disp="";
-						$activli="";
-						if ($navb[$i]['NUM'] > 0) {
-						if($PARENT_ID["P_OUT_NUM"]==$navb[$i]['SEQ']) {
-							$openli = "open";
-							//$disp = "display: block;";
-							if ($navb[$i]['NUM'] > 0) {
-								if ($navb[$i]['URL'] == $cont . "/" . $action) {
-									$activli = "active";
-								}
-							}
-						}
-						?>
+                                $openli="";
+                                $disp="";
+                                $activli="";
+						        if ($navb[$i]['NUM'] > 0) {
+						            if($PARENT_ID["P_OUT_NUM"]==$navb[$i]['SEQ']) {
+							            $openli = "open";
+							            if ($navb[$i]['NUM'] > 0) {
+								            if ($navb[$i]['URL'] == $cont . "/" . $action) {
+									            $activli = "active";
+								            }
+							            }
+						            }
+						    ?>
                         <li class="nav-item <?php echo $openli . $activli?> ">
                             <a href="<?php echo $navb[$i]['URL']; ?>" class="nav-link nav-toggle">
                                 <i class="<?php echo $navb[$i]['ICON']; ?>"></i>
@@ -349,6 +356,8 @@ $notify = $this->load->model('Notification_M', 'notify');
         <script src="assets/global/plugins/datatables/datatables.all.min.js" type="text/javascript"></script>
         <script src="assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"
                 type="text/javascript"></script>
+                <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+
         <!-- END THEME LAYOUT SCRIPTS -->
 
         <?php

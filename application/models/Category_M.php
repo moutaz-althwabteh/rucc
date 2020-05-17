@@ -64,6 +64,17 @@ class Category_M extends CI_Model
         return $result;
     }
 
+    public function categories_by_parent($p_parent)
+    {
+        $params = array(
+            array('name' => ':p_parent', 'value' => $p_parent, 'type' => '', 'length' => 100),
+            array('name' => ':P_CUR', 'value' => 'records', 'type' => 'cur', 'length' => -1),
+
+        );
+        $x = $this->dbconn->excuteProcedures('CATEGORIES_PKG', 'CATEGORIES_BY_PARENT', $params);
+        return $x['records'];
+    }
+
 
 }
 

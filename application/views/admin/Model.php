@@ -3,27 +3,9 @@
         <div class="portlet light ">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="icon-bubble font-green-sharp"></i>
                     <span class="caption-subject font-green-sharp bold uppercase">اضافة نموذج</span>
                 </div>
-                <div class="actions">
-                    <div class="btn-group">
-                        <a class="btn green-haze btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" aria-expanded="false"> العمليات
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a href="javascript:;">  طباعة</a>
-                            </li>
-                            <li class="divider"> </li>
-                            <li>
-                                <a href="javascript:;">ترتيب</a>
-                            </li>
-
-
-                        </ul>
-                    </div>
-                </div>
+       
             </div>
             <div class="">
 
@@ -54,9 +36,11 @@
                                 <label class="col-md-3 control-label">التصنيف</label>
                                 <div class="col-md-5">
                                     <select class="form-control" id="CAT_SEQ" name="CAT_SEQ">
-                                        <option selected>اختر...</option>
-                                        <option value="1">عقود</option>
-                                        <option value="2">معاملا قانونية</option>
+                                    <?php foreach ($categories as $category) {
+                                        ?>
+                                        <option value="<?php echo $category["CAT_SEQ"] ?>"><?php echo  $category["CAT_NAME"] ?></option>
+                                        <?php
+                                    } ?>
                                     </select>
                                 </div>
                             </div>

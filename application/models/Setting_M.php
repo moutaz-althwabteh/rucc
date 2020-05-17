@@ -35,7 +35,7 @@ class Setting_M extends CI_Model
 
         );
         $x = $this->dbconn->excuteProcedures('SETTING_PKG', 'ITEMS_SETTING', $params);
-        return $x;
+        return $x['records'];
     }
 
     public function GET_CODE_BY_PARENT($P_PARENT_ID)

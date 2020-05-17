@@ -1,7 +1,34 @@
+<div class="breadcrumb-website">
+            <div class="container">
+                <div class="row">
+                    <div class="breadcrumb breadcrumb-fill0">
+                        <div class="col-md-6">
+                            <ol>
+                                <li><a href="/"><i class="fa fa-home"></i></a></li>
+                                <li><a href="/">الاستشارات</a></li>
+                                <li class="active">الاستشارات القانونية</li>
+                            </ol>
+                        </div>
 
-<br>
-<br>
-<br>
+                        <div class="section-actions">
+
+                            <div class="col-md-3" style="float: left;">
+                                <div class="input-group"> <input class="form-control" placeholder="بحث عن عقود ومعاملات..."> <span class="input-group-btn"> <button class="btn btn-default" type="button"><i class="fa fa-search"></i> بحث</button> </span> </div>
+
+                            </div>
+                            <div class="col-md-2" style="float: left;">
+                                <select name="type" id="type" class="form-control">
+                                    <option value="">اختر</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
         <section class="consultations-list">
             <div class="container">
                 <div class="row">
@@ -32,13 +59,15 @@
                         <?php } ?>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <div class="pagination">
-							<p><?php echo $this->pagination->create_links(); ?></p>
+                            <span class="pagination-inner">
+                            <?php echo $this->pagination->create_links(); ?>
+                            </span>
                         </div>
                     </div>
                 </div>
+          
             </div>
         </section>

@@ -34,24 +34,18 @@
                         </div>
                     </div>
 
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">وصف التصنيف</label>
-                            <div class="col-md-5">
-                                <input type="text" class="form-control" id="CAT_DESC" name="CAT_DESC"
-                                       placeholder="وصف التصنيف">
-                            </div>
-                        </div>
-                    </div>
+                  
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="col-md-3 control-label">متفرع من</label>
                                 <div class="col-md-5">
                                     <select class="form-control" id="PARENT" name="PARENT">
-                                    <option value="1">الأول</option>
-                                    <option value="2">الثاني</option>
-                                    <option value="3">الثالث</option>
-                                    <option value="4">الرابع</option>
+                                    <option value="0">اختر</option>
+                                    <?php foreach ($categories as $category) {
+                                        ?>
+                                        <option value="<?php echo $category["CAT_SEQ"] ?>"><?php echo  $category["CAT_NAME"] ?></option>
+                                        <?php
+                                    } ?>
                                     </select>
                                 </div>
                             </div>

@@ -3,27 +3,9 @@
         <div class="portlet light ">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="icon-bubble font-green-sharp"></i>
-                    <span class="caption-subject font-green-sharp bold uppercase">الثوابت </span>
+                    <span class="caption-subject font-green-sharp bold uppercase">الاعدادت العامة </span>
                 </div>
-                <div class="actions">
-                    <div class="btn-group">
-                        <a class="btn green-haze btn-outline btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" aria-expanded="false"> العمليات
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a href="javascript:;">  طباعة</a>
-                            </li>
-                            <li class="divider"> </li>
-                            <li>
-                                <a href="javascript:;">ترتيب</a>
-                            </li>
 
-
-                        </ul>
-                    </div>
-                </div>
             </div>
             <div class="">
 
@@ -36,7 +18,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label"> المؤسسة </label>
                                 <div class="col-md-5">
-                                    <input type="text" class="form-control" id="TITLE" name="TITLE" placeholder="العنوان ">
+                                    <input type="text" class="form-control" id="TITLE" name="TITLE" value="<?php echo $setting["TITLE"] ?>" placeholder="العنوان ">
                                 </div>
                             </div>
                         </div>
@@ -45,7 +27,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">فيس بوك  </label>
                                 <div class="col-md-5">
-                                    <input type="text" class="form-control" id="FB_URL" name="FB_URL" placeholder="فيس بوك ">
+                                    <input type="text" class="form-control" value="<?php echo $setting["FB_URL"] ?>" id="FB_URL" name="FB_URL" placeholder="فيس بوك ">
                                 </div>
                             </div>
                         </div>
@@ -53,7 +35,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">انستقرام  </label>
                                 <div class="col-md-5">
-                                    <input type="text" class="form-control" id="INST_URL" name="INST_URL" placeholder=" انستقرام">
+                                    <input type="text" class="form-control" value="<?php echo $setting["INST_URL"] ?>" id="INST_URL" name="INST_URL" placeholder=" انستقرام">
                                 </div>
                             </div>
                         </div>
@@ -61,7 +43,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label"> تويتر  </label>
                                 <div class="col-md-5">
-                                    <input type="text" class="form-control" id="TWITTER_URL" name="TWITTER_URL" placeholder="تويتر ">
+                                    <input type="text" class="form-control" value="<?php echo $setting["TWITTER_URL"] ?>" id="TWITTER_URL" name="TWITTER_URL" placeholder="تويتر ">
                                 </div>
                             </div>
                         </div>
@@ -69,7 +51,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">جوجل بلس  </label>
                                 <div class="col-md-5">
-                                    <input type="text" class="form-control" id="GOOGLE_URL" name="GOOGLE_URL" placeholder=" جوجل بلس">
+                                    <input type="text" class="form-control" value="<?php echo $setting["GOOGLE_URL"] ?>" id="GOOGLE_URL" name="GOOGLE_URL" placeholder=" جوجل بلس">
                                 </div>
                             </div>
                         </div>
@@ -77,7 +59,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label"> البريد الإلكتروني  </label>
                                 <div class="col-md-5">
-                                    <input type="text" class="form-control" id="EMAIL" name="EMAIL" placeholder="البريد الإلكتروني ">
+                                    <input type="text" class="form-control" value="<?php echo $setting["EMAIL"] ?>" id="EMAIL" name="EMAIL" placeholder="البريد الإلكتروني ">
                                 </div>
                             </div>
                         </div>
@@ -85,7 +67,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label"> الهاتف   </label>
                                 <div class="col-md-5">
-                                    <input type="text" class="form-control" id="PHONE" name="PHONE" placeholder=" الهاتف ">
+                                    <input type="text" class="form-control" value="<?php echo $setting["PHONE"] ?>" id="PHONE" name="PHONE" placeholder=" الهاتف ">
                                 </div>
                             </div>
                         </div>
@@ -93,7 +75,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label"> الجوال   </label>
                                 <div class="col-md-5">
-                                    <input type="text" class="form-control" id="MOBILE" name="MOBILE" placeholder=" الجوال ">
+                                    <input type="text" class="form-control" value="<?php echo $setting["MOBILE"] ?>" id="MOBILE" name="MOBILE" placeholder=" الجوال ">
                                 </div>
                             </div>
                         </div>
@@ -101,7 +83,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label"> العنوان   </label>
                                 <div class="col-md-5">
-                                    <input type="text" class="form-control" id="ADDRESS" name="ADDRESS" placeholder=" العنوان ">
+                                    <input type="text" class="form-control" value="<?php echo $setting["ADDRESS"]; ?>" id="ADDRESS" name="ADDRESS" placeholder=" العنوان ">
                                 </div>
                             </div>
                         </div>
@@ -123,22 +105,8 @@
     </div>
 
 </div>
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="portlet light ">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="icon-bubble font-green-sharp"></i>
-                    <span class="caption-subject font-green-sharp bold uppercase">إدارة الثوابت </span>
-                </div>
-            </div>
-            <div class="portlet-body form">
-                <table class="table" id="Set-table">
-
-                </table>
-
-            </div>
-        </div>
-    </div>
-</div>
+<script>
+function rebind_set_table(){
+    $(".blockUI").hide();
+}
+</script>

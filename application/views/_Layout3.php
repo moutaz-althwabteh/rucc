@@ -1,7 +1,7 @@
 <?php
 
 $this->load->model('Setting_M','Set');
-$data = $this->Set->Setting_Select(1);
+$data = $this->Set->Setting_Select(1)[0];
 ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -31,6 +31,7 @@ $data = $this->Set->Setting_Select(1);
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Almarai:400,700&display=swap" rel="stylesheet">
+    <link href="assets/global/plugins/bootstrap-toastr/toastr-rtl.css" rel="stylesheet" type="text/css"/>
 
     <style>
         .inner-content {
@@ -127,16 +128,16 @@ $data = $this->Set->Setting_Select(1);
                     <ul class="footer-contacts">
                         <li>
                             <a href="#">
-                                <i class="fa fa-envelope"></i> <?php echo $data['records'][0]['EMAIL']?>
+                                <i class="fa fa-envelope"></i> <?php echo $data['EMAIL']?>
                             </a>
                         </li>
 
 
 
-                        <li><a href="#"><i class="fa fa-phone"></i> <?php echo $data['records'][0]['PHONE']?></a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i> <?php echo $data['PHONE']?></a></li>
 
                         <li>
-                            <p><i class="fa fa-map-marker"></i> <?php echo $data['records'][0]['ADDRESS']?></p>
+                            <p><i class="fa fa-map-marker"></i> <?php echo $data['ADDRESS']?></p>
                         </li>
                     </ul>
 
@@ -177,10 +178,10 @@ $data = $this->Set->Setting_Select(1);
 
                 <div class="col-md-4 text-right">
                     <ul class="footer-share">
-                        <li><a href="<?php echo $data['records'][0]['FB_URL']?>"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="<?php echo $data['records'][0]['TWITTER_URL']?>"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="<?php echo $data['records'][0]['INST_URL']?>"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="<?php echo $data['records'][0]['GOOGLE_URL']?>"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="<?php echo $data['FB_URL']?>"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="<?php echo $data['TWITTER_URL']?>"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="<?php echo $data['INST_URL']?>"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="<?php echo $data['GOOGLE_URL']?>"><i class="fa fa-google-plus"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -202,6 +203,7 @@ $data = $this->Set->Setting_Select(1);
     <script src="assets/js/retina.min.js"></script>
     <script src="assets/js/modernizr.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/js.js"></script>
     <script src="assets/js/file_js/js.js" type="text/javascript"></script>
     <script src="assets/global/plugins/bootstrap-toastr/toastr.js" type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>

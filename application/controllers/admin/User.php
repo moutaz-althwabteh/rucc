@@ -38,7 +38,8 @@ class User extends AdminBase{
                 $this->input->post('EMAIL'),
                 $this->input->post('MOBILE'),
                 1 ,
-                $this->input->post('TYPE_USER')
+                $this->input->post('TYPE_USER'),
+                $this->input->post('JOB')
             );
             header('Content-Type: application/json');
             echo json_encode($y);

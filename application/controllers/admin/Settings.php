@@ -14,17 +14,14 @@ class Settings extends AdminBase{
     public function index()
     {
         $data["subview"]="admin/Settings";
-        $data["js"] = "js/Setting";
+        $data['setting'] = $this->Set->Setting_Select(1)[0];
+
         $this->parser->parse('admin/_layout',$data);
     }
 
     public function load_Setting()
     {
             $data = $this->Set->Setting_Select(1);
-//            echo '<pre>';
-//            print_r($data);
-////        return;
-//            echo '</pre>';
             header('Content-Type: application/json');
             echo json_encode($data);
     }

@@ -27,7 +27,6 @@ class Model_M extends CI_Model
         $params = array(
             array('name' => ':P_CUR', 'value' => 'records', 'type' => 'cur', 'length' => -1),
             array('name' => ':p_user_id', 'value' => $P_user_id, 'type' => '', 'length' => 100),
-           /// array('name' => ':P_NUM', 'value' => $P_NUM, 'type' => '', 'length' => 100),
             array('name' => ':P_START', 'value' => $P_START, 'type' => '', 'length' => 100),
             array('name' => ':P_ROWSPERPAGE', 'value' => $P_ROWSPERPAGE, 'type' => '', 'length' => 100),
         );
@@ -85,7 +84,16 @@ class Model_M extends CI_Model
 		$result = array();
 		$result["COUNT_MODEL"] = $x["COUNT_MODEL"];
 		return $result;
-	}
+    }
+    
+    public function model_select_6()
+    {
+        $params = array(
+            array('name' => ':p_cur', 'value' => 'records', 'type' => 'cur', 'length' => -1),
+         );
+        $x = $this->dbconn->excuteProcedures('fornt_end', 'model_select_6', $params);
+        return $x;
+    }
 
 }
 

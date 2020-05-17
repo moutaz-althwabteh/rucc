@@ -4,19 +4,20 @@ class Book_M extends CI_Model
 
     public function Book_Save($P_BOOK_SEQ, $P_BOOK_NAME, $P_TYPE, $P_DESCRIPTION, $P_ATTCHMENT ,$P_IMAGE, $P_AUTHOR, $P_USER_ID ,$P_PRINT_TIME)
     {
-//         echo $P_ATTCHMENT;
-//        echo $P_IMAGE;
+        if($P_BOOK_SEQ=="")
+            $P_BOOK_SEQ=0;
 
+      
         $params = array(
-            array('name' => ':P_BOOK_SEQ', 'value' => $P_BOOK_SEQ, 'type' => '', 'length' => -1),
+            array('name' => ':P_BOOK_SEQ', 'value' => $P_BOOK_SEQ, 'type' => '', 'length' => 100),
             array('name' => ':P_BOOK_NAME', 'value' => $P_BOOK_NAME, 'type' => '', 'length' => 100),
             array('name' => ':P_TYPE', 'value' => $P_TYPE, 'type' => '', 'length' => 100),
             array('name' => ':P_DESCRIPTION', 'value' => $P_DESCRIPTION, 'type' => '', 'length' => 100),
             array('name' => ':P_ATTCHMENT', 'value' => $P_ATTCHMENT, 'type' => '', 'length' => 100),
             array('name' => ':P_IMAGE', 'value' => $P_IMAGE, 'type' => '', 'length' => 500),
             array('name' => ':P_AUTHOR', 'value' => $P_AUTHOR, 'type' => '', 'length' => 100),
-            array('name' => ':P_USER_ID', 'value' => $P_USER_ID, 'type' => '', 'length' => 100),
             array('name' => ':P_PRINT_TIME', 'value' => $P_PRINT_TIME, 'type' => '', 'length' => 100),
+            array('name' => ':P_USER_ID', 'value' => $P_USER_ID, 'type' => '', 'length' => 100),
             array('name' => ':p_msg', 'value' => 'message', 'type' => '', 'length' => 100),
             array('name' => ':p_status', 'value' => 'status', 'type' => '', 'length' => 100),
 

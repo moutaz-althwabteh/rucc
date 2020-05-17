@@ -52,6 +52,14 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
+                                <label class="col-md-3 control-label">المسمى الوظيفي</label>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" id="JOB" name="JOB" placeholder="المسمى الوظيفي  ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
                                 <label class="col-md-3 control-label">نوع المستخدم  </label>
                                 <div class="col-md-5">
                                     <select class="form-control" id="TYPE_USER" name="TYPE_USER">

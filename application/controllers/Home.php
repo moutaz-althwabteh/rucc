@@ -29,18 +29,23 @@ class Home extends CI_Controller {
 		$this->pagerSetting['page_query_string'] = TRUE;
 		$this->pagination->initialize($this->pagerSetting);
 		$data["subview"]="site/Home";
-        $data["All_Mod"] = $this->Mod->MODEL_SELECT(1,$start,$rowsPerPage);
+        $data["All_Mod"] = $this->Mod->model_select_6();
         $data["All_Book"] = $this->book->book_Select(1 ,$start,$rowsPerPage);
-		$data["All_Con"] = $this->Con->Con_Select(1)['records'];
+		$data["All_Con"] = $this->Con->Con_Select(1);
 		
 		$data["All_Adv"] = $this->Adv->Advice_Select(1)['records'];
-		// print_r($data["All_Adv"]);
-		// die();
+
         $this->parser->parse('_Layout',$data);
-		//$this->load->view('welcome_message');
 	}
 
 
+	public function contact()
+	{
+		$data["subview"]="site/contact";
+		$data['js']="/js/site/contact";
+		$data['setting'] = $this->Set->Setting_Select(1)[0];
+		$this->parser->parse('_Layout3',$data);
+	}
 
 	public function form()
 	{
@@ -77,9 +82,10 @@ class Home extends CI_Controller {
 		$start= $this->input->get("per_page");
 		if($start<0) $start=0;
 		$totalCount= $this->Mod->MODEL_COUNT('COUNT_MODEL'); 
-		$rowsPerPage = 5;
+		$rowsPerPage = 9;
 		if($start>$totalCount['COUNT_MODEL'])
 			$start=(ceil($totalCount/$rowsPerPage)-1)*$rowsPerPage;
+
 		$this->pagerSetting['base_url'] =base_url(). "Home/Show_templates";
 		$this->pagerSetting['total_rows'] = $totalCount['COUNT_MODEL'];
 		$this->pagerSetting['per_page'] = $rowsPerPage;
@@ -87,7 +93,7 @@ class Home extends CI_Controller {
 		$this->pagination->initialize($this->pagerSetting);
         $data["All_Mod"] = $this->Mod->MODEL_SELECT(1,$start,$rowsPerPage);
         $data["subview"] = "site/Show_templates";
-        $this->parser->parse('_Layout', $data);
+        $this->parser->parse('_Layout3', $data);
     }
 
     public function Book()

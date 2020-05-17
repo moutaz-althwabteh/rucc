@@ -20,7 +20,7 @@
                 processData : false,
                 success : function (data,form) {
                     m.toast(data);
-                    ModTb.refresh();
+                    rebind_Mod_table();
                 }
             });
 

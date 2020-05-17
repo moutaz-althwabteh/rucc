@@ -14,27 +14,29 @@ class Contact extends AdminBase{
 	}
     public function index()
     {
-        $data["subview"]="site/contact";
-		$data["js"] = "js/Contact";
-		$this->parser->parse('_Layout',$data);
-    }
-
-    public function Get_Msg()
-    {
         $data["subview"]="admin/ContactAdmin";
 		$data["js"] = "js/Contact";
 		$this->parser->parse('admin/_layout',$data);
     }
 
+    public function view()
+    {
+        $data["contact"]=$this->cont->GET_ONE( $this->uri->segment(3))[0];
+        $data["subview"]="admin/Contact";
+        // die();
+        $this->parser->parse('admin/_layout',$data);
+    }
 	public function show_all()
 	{
 		$data["subview"]="admin/show";
-		$data["js"] = "js/Contact";
-		$this->parser->parse('admin/layout',$data);
+		$data["js"] = "js/Contact"[0];
+		$this->parser->parse('admin/_layout',$data);
 	}
+
 
     public function Save()
     {
+         die($this->input->post('CONTACT_ID'));
         if ($this->input->is_ajax_request()) {
             $y = $this->cont->Contact_Save(
                 $this->input->post('CONTACT_ID'),
@@ -52,8 +54,7 @@ class Contact extends AdminBase{
 
     public function CONT_DELETE()
     {
-        $data = $this->cont->CONT_DELETE($this->input->post('CONTACT_ID')
-        );
+        $data = $this->cont->CONT_DELETE($this->input->post('CONTACT_ID'));
         header('Content-Type: application/json');
         echo json_encode($data);
     }

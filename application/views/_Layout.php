@@ -2,7 +2,7 @@
 <?php
 
  $this->load->model('Setting_M','Set');
-$data = $this->Set->Setting_Select(1);
+$data = $this->Set->Setting_Select(1)[0];
 ?>
 
 <!doctype html>
@@ -38,33 +38,6 @@ $data = $this->Set->Setting_Select(1);
 </head>
 
 <body>
-<!-- <header id="header" class="fixed">
-    <div class="header-content clearfix inner-header">
-        <a class="logo" href="#">
-            <img src="assets/images/logo-collage.png" alt="">
-            <div class="app-name">
-                <h3>مركز الاستشارات القانونية</h3>
-                <p>كلية الرباط الجامعية</p>
-            </div>
-
-        </a>
-        <nav class="navigation" role="navigation">
-            <ul class="primary-nav">
-                <li><a href="<?php echo base_url("Home/index");?>" class="nav-item active">الرئيسية</a></li>
-                <li><a href="<?php echo base_url("Home/form");?>" class="nav-item">خدمات المركز</a></li>
-                <li><a href="<?php echo base_url("Home/Consult");?>" class="nav-item">استشارات قانونية </a></li>
-                <li><a href="<?php echo base_url("Home/Show_templates");?>" class="nav-item">نماذج قانونية</a></li>
-                <li><a href="<?php echo base_url("Home/Show_templates");?>" class="nav-item">نصائح قانونية</a></li>
-                <li><a href="<?php echo base_url("Home/Book");?>" class="nav-item">المكتبة القانونية</a></li>
-                <li><a href="#download" class="nav-item">اتصل بنا</a></li>
-                <li><a class="btn btn-sm btn-success" href="#">تسجيل الدخول</a></li>
-
-
-            </ul>
-        </nav>
-        <a href="#" class="nav-toggle">Menu<span></span></a>
-    </div>
-</header> -->
 <header id="header" class="fixed">
     <div class="header-content clearfix">
         <a class="logo" href="#">
@@ -80,9 +53,10 @@ $data = $this->Set->Setting_Select(1);
             <li><a href="<?php echo base_url("Home/index");?>" class="nav-item active">الرئيسية</a></li>
                 <li><a href="<?php echo base_url("Home/form");?>" class="nav-item">خدمات المركز</a></li>
                 <li><a href="<?php echo base_url("Home/Consult");?>" class="nav-item">استشارات قانونية </a></li>
-                <li><a href="<?php echo base_url("Home/Show_templates");?>" class="nav-item">نماذج قانونية</a></li>
+                <li><a href="#templates" class="nav-item">نماذج قانونية</a></li>
                 <li><a href="<?php echo base_url("Home/Show_templates");?>" class="nav-item">نصائح قانونية</a></li>
                 <li><a href="<?php echo base_url("Home/Book");?>" class="nav-item">المكتبة القانونية</a></li>
+                <li><a href="<?php echo base_url("contact");?>" class="nav-item">اتصل بنا</a></li>
                 <li><a class="btn btn-sm btn-success" href="#">تسجيل الدخول</a></li>
 
 
@@ -120,16 +94,16 @@ $data = $this->Set->Setting_Select(1);
                     <ul class="footer-contacts">
                         <li>
                             <a href="#">
-                                <i class="fa fa-envelope"></i> <?php echo $data['records'][0]['EMAIL']?>
+                                <i class="fa fa-envelope"></i> <?php echo $data['EMAIL']?>
                             </a>
                         </li>
 
 
 
-                        <li><a href="#"><i class="fa fa-phone"></i> <?php echo $data['records'][0]['PHONE']?></a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i> <?php echo $data['PHONE']?></a></li>
 
                         <li>
-                            <p><i class="fa fa-map-marker"></i> <?php echo $data['records'][0]['ADDRESS']?></p>
+                            <p><i class="fa fa-map-marker"></i> <?php echo $data['ADDRESS']?></p>
                         </li>
                     </ul>
 
@@ -170,10 +144,10 @@ $data = $this->Set->Setting_Select(1);
 
                 <div class="col-md-4 text-right">
                     <ul class="footer-share">
-                        <li><a href="<?php echo $data['records'][0]['FB_URL']?>"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="<?php echo $data['records'][0]['TWITTER_URL']?>"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="<?php echo $data['records'][0]['INST_URL']?>"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="<?php echo $data['records'][0]['GOOGLE_URL']?>"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="<?php echo $data['FB_URL']?>"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="<?php echo $data['TWITTER_URL']?>"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="<?php echo $data['INST_URL']?>"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="<?php echo $data['GOOGLE_URL']?>"><i class="fa fa-google-plus"></i></a></li>
                     </ul>
                 </div>
             </div>

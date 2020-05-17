@@ -1,5 +1,4 @@
 
-//alert();
 var BookTb = function () {
     var _this = this;
 
@@ -29,10 +28,24 @@ var BookTb = function () {
             },
             "columns": [
                 { "data": "BOOK_SEQ", "title": "م." },
+                {
+                    "data": null,
+                    "title": "",
+                    "render":function(data){
+                        return '<a target="_balnk" href="uploads/'+data.BOOK_IMG+'"><img class="img-circle" src="uploads/'+data.BOOK_IMG+'" width="30" higth="25"></a>'
+                    }
+                },
                 { "data": "BOOK_NAME", "title": "اسم الكتاب "},
-                { "data": "TYPE", "title": "نوع الكتاب "},
+                { "data": "TYPE_DESC", "title": "نوع الكتاب "},
                 { "data": "DESCRIPTION", "title": "الوصف "},
                 { "data": "AUTHOR", "title": "مؤلف الكتاب "},
+                {
+                    "data": null,
+                    "title": "الكتاب",
+                    "render":function(data){
+                        return '<a target="_blank" href="uploads/'+data.BOOK_ATTCHMENT+'">تحميل</a>'
+                    }
+                },
                 {
                     "data": null,
                     "title": "خيارات",
@@ -45,15 +58,7 @@ var BookTb = function () {
             ],
             "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
 
-                if (aData.ISACTIVE == 0) {
-                    $('td', nRow).css('background-color', '#f2dede');
-                    $(nRow).addClass('wobble-vertical');
-
-                } else {
-                    $('td', nRow).css('background-color', '#dff0d8');
-                    $(nRow).addClass('wobble-vertical');
-
-                }
+                
             }
         },
         refresh: function () {
@@ -89,15 +94,7 @@ var BookTb = function () {
                     })
                 });
 
-                // $(document).on('change','#ATTCHMENT',function(){
-                //     var file_name = $('#ATTCHMENT').val().replace(/C:\\fakepath\\/i, '')
-                //     $('#filename').val(file_name);
-                // });
-                //
-                // $(document).on('change','#IMAGE',function(){
-                //     var file_name = $('#IMAGE').val().replace(/C:\\fakepath\\/i, '')
-                //     $('#imagefile').val(file_name);
-                // });
+       
 
                 $(document).on('click','.download-attach',function(e){
                     var y = _this.oTable.api().row($(this).parent().parent()).data();
@@ -128,7 +125,7 @@ var BookTb = function () {
                 $(document).on('click', '.edit-book', function () {
                     var data = _this.oTable.api().row($(this).parent().parent()).data();
                     Util.bindInputs("#SaveBookForm", data, '');
-                    $('#SaveBookForm').goto('-60', 400);
+                    $("html, body").animate({scrollTop: 0}, 1000);
                 });
 
                 var BOOK_SEQ;
@@ -171,7 +168,7 @@ var BookTb = function () {
 BookTb.init();
 
 var rebind_book_table = function (result, form) {
-    $(form).find('input').val('');
+    $('form').find('input').val('');
     BookTb.refresh();
     }
 
@@ -220,15 +217,7 @@ var BCatTb = function () {
 			],
 			"fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
 
-				if (aData.ISACTIVE == 0) {
-					$('td', nRow).css('background-color', '#f2dede');
-					$(nRow).addClass('wobble-vertical');
 
-				} else {
-					$('td', nRow).css('background-color', '#dff0d8');
-					$(nRow).addClass('wobble-vertical');
-
-				}
 			}
 		},
 		refresh: function () {
@@ -266,7 +255,7 @@ var BCatTb = function () {
 
 				$(document).on('click', '.edit-cat', function () {
 					var data = _this.oTable.api().row($(this).parent().parent()).data();
-					Util.bindInputs("#SaveCatBook", data, '');
+					// Util.bindInputs("#SaveCatBook", data, '');
 					$('#SaveCatBook').goto('-60', 400);
 				});
 

@@ -1,6 +1,6 @@
 <script src="assets/js/file_js/Contact.js" type="text/javascript"></script>
 
-<script>
+<!-- <script>
 	$("#btnSaveAdv" ).click(function(e) {
 		e.preventDefault();
 		uploadImage();
@@ -29,4 +29,4 @@
 
 
 
-</script>
+</script> -->

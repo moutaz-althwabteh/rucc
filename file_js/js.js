@@ -1286,15 +1286,15 @@ $(document).ready(function () {
             toastr["error"](settings.url + ' says ' + HtmlError[1].text, "error!");
         } else {
             toastr["error"](settings.url + ' says : Unknown Error Occured!', "error!");
-        }``
+        }
 
 
     });
 
-    // $(".search-select").select2({
-    //     placeholder: "Select from ..",
-    //     allowClear: true
-    // });
+    $(".search-select").select2({
+        placeholder: "Select from ..",
+        allowClear: true
+    });
 
     $('#AddItemModal').on('hidden.bs.modal', function () {
         var _this = $(this);

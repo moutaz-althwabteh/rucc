@@ -46,6 +46,16 @@ class Contact_M extends CI_Model
         $result["status"] = $x["status"];
         return $result;
     }
+
+    public function GET_ONE($P_ID)
+    {
+        $params = array(
+            array('name' => ':P_ID', 'value' => $P_ID, 'type' => '', 'length' => -1),
+            array('name' => ':P_CUR', 'value' => 'records', 'type' => 'cur', 'length' => -1),
+        );
+        $x = $this->dbconn->excuteProcedures('CONTACT_BKG', 'GET_ONE', $params);
+        return $x['records'];
+    }
 }
 
 ?>

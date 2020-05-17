@@ -8,6 +8,7 @@ class Model extends AdminBase{
     function __construct() {
         parent::__construct();
         $this->load->model('Model_M','Mod');
+        $this->load->model('Category_M','Cat');
         $this->load->model('Setting_M','Set');
 		$this->load->model('Permission_M', 'permission');
 
@@ -17,6 +18,7 @@ class Model extends AdminBase{
     {
         $data["subview"]="admin/Model";
         $data["js"] = "js/model";
+        $data['categories']=$this->Cat->categories_by_parent(42);
         $this->parser->parse('admin/_layout',$data);
     }
     public function load_Model()

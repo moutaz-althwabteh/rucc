@@ -35,31 +35,28 @@ var ContactTb = function () {
                 { "data": "EMAIL", "title": "الايميل   "},
                 { "data": "PHONE", "title": "رقم الجوال  "  },
                 {
-                    "data": "MSG_TEXT" ,
-                    "title": "الوصف",
+                    "data": null,
+                    "title": "",
+                    "render":function(data ,type, row  , mate){
+                      if(row.IS_READ==0){
+                          return '<lable class="badge badge-secondary">لم يشاهد</lable>';
+                      }else{
+                        return '<lable class="badge badge-success">تمت المشاهدة</lable>';
+                      }
+                    }
                 },
                 {
                     "data": null,
                     "title": "خيارات",
                     "render":function(data ,type, row  , mate){
-                        return '<button data-toggle="tooltip" title="تعديل" type="button" class="btn btn-success btn-sm circle-btn edit-con"><i class="fa fa-pencil"></i></button> '+'' +
-                            '<button data-toggle="tooltip" title="حذف"type="button" class="btn btn-danger btn-sm circle-btn delete-con"><i class="fa fa-trash"></i></button>'+'' +
-                            '<button type="button" class="btn btn-small btn-primary circle-btn reply-con"><i class="fa fa-reply"> </i> </button>' ;
-                        // <a href="admin/Consult/Reply"'+data.CON_SEQ +'>
+                        return'<button data-toggle="tooltip" title="حذف"type="button" class="btn btn-danger btn-sm circle-btn delete-con"><i class="fa fa-trash"></i></button>'+''+
+                                '<a href="admin/Contact/'+row.CONTACT_ID+'" class="btn btn-primary btn-sm circle-btn"><i class="fa fa-edit"></i><a/>'
                     }
                 }
             ],
             "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
 
-                if (aData.ISACTIVE == 0) {
-                    $('td', nRow).css('background-color', '#f2dede');
-                    $(nRow).addClass('wobble-vertical');
-
-                } else {
-                    $('td', nRow).css('background-color', '#dff0d8');
-                    $(nRow).addClass('wobble-vertical');
-
-                }
+               
             }
         },
         refresh: function () {
@@ -80,25 +77,25 @@ var ContactTb = function () {
 
 
               
-                var CON_SEQ;
+                var CONTACT_ID;
                 $(document).on('click', '.delete-con', function (data, callbak) {
                     $('#ConfirmModal').modal('show');
                     var x = _this.oTable.api().row($(this).parent().parent()).data();
-                    CON_SEQ = x.CON_SEQ = x['CON_SEQ'];
+                    CONTACT_ID = x.CON_SEQ = x['CONTACT_ID'];
                 });
                 $("#yes").click(function (e) {
                     e.preventDefault();
                     if ($(this).hasClass('test')) {
                         jQuery.ajax({
                             type: "post",
-                            url: 'admin/Consult/Con_Delete',
+                            url: 'admin/Contact/CONT_DELETE',
                             data: {
-                                'CON_SEQ' :CON_SEQ
+                                'CONTACT_ID' :CONTACT_ID
                             },
                             dataType: 'json',
                             success: function (data) {
                                 m.toast(data);
-                                rebind_con_table(data)
+                                rebind_Contact_table(data)
                                 $('#ConfirmModal').modal('hide');
 
                             }
@@ -127,7 +124,6 @@ ContactTb.init();
 
 
 var rebind_Contact_table = function (result) {
-  //  $(form).find('input').val('');
   ContactTb.refresh();
     }
 

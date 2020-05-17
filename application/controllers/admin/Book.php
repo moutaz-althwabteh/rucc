@@ -33,8 +33,7 @@ class Book extends AdminBase{
         if ($this->input->is_ajax_request()) {
             $random = $this->do_upload("ATTCHMENT");
             $randomImage = $this->do_upload("IMAGE");
-           // print_r($randomImage);
-//            return;
+
             $y = $this->book->book_Save(
                 $this->input->post('BOOK_SEQ'),
                 $this->input->post('BOOK_NAME'),

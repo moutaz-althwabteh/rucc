@@ -2,16 +2,17 @@
 class User_M extends CI_Model
 {
 
-    public function User_Save($P_SEQ,$P_ID_NUM, $P_FULL_NAME, $P_EMAIL, $P_MOBILE, $P_USER_ID , $P_TYPE_USER)
+    public function User_Save($P_SEQ,$P_ID_NUM, $P_FULL_NAME, $P_EMAIL, $P_MOBILE, $P_USER_ID , $P_TYPE_USER,$P_JOB)
     {
         $params = array(
             array('name' => ':P_SEQ', 'value' => $P_SEQ, 'type' => '', 'length' => -1),
             array('name' => ':P_ID_NUM', 'value' => $P_ID_NUM, 'type' => '', 'length' => -1),
-            array('name' => ':P_FULL_NAME', 'value' => $P_FULL_NAME, 'type' => '', 'length' => 100),
-            array('name' => ':P_EMAIL', 'value' => $P_EMAIL, 'type' => '', 'length' => 100),
+            array('name' => ':P_FULL_NAME', 'value' => $P_FULL_NAME, 'type' => '', 'length' => 500),
+            array('name' => ':P_EMAIL', 'value' => $P_EMAIL, 'type' => '', 'length' => 200),
             array('name' => ':P_MOBILE', 'value' => $P_MOBILE, 'type' => '', 'length' => 100),
             array('name' => ':P_USER_ID', 'value' => $P_USER_ID, 'type' => '', 'length' => 100),
             array('name' => ':P_TYPE_USER', 'value' => $P_TYPE_USER, 'type' => '', 'length' => 100),
+            array('name' => ':P_JOB', 'value' => $P_JOB, 'type' => '', 'length' => 500),
             array('name' => ':p_msg', 'value' => 'message', 'type' => '', 'length' => 100),
             array('name' => ':p_status', 'value' => 'status', 'type' => '', 'length' => 100),
 

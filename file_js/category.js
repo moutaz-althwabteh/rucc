@@ -30,8 +30,7 @@ var CatTb = function () {
             "columns": [
                 { "data": "CAT_SEQ", "title": "م." },
                 { "data": "CAT_NAME", "title": "اسم التصنيف"},
-                { "data": "CAT_DESC", "title": "وصف التصنيف "},
-                { "data": "PARENT", "title": " متفرع من "  },
+                { "data": "PARENT_NAME", "title": " متفرع من "  },
                 {
                     "data": null,
                     "title": "خيارات",
@@ -44,15 +43,7 @@ var CatTb = function () {
             ],
             "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
 
-                if (aData.ISACTIVE == 0) {
-                    $('td', nRow).css('background-color', '#f2dede');
-                    $(nRow).addClass('wobble-vertical');
-
-                } else {
-                    $('td', nRow).css('background-color', '#dff0d8');
-                    $(nRow).addClass('wobble-vertical');
-
-                }
+              
             }
         },
         refresh: function () {

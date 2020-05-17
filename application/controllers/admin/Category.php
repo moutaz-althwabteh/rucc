@@ -15,6 +15,7 @@ class Category extends AdminBase{
     {
         $data["subview"]="admin/Category";
         $data["js"] = "js/category";
+        $data['categories']=$this->Cat->categories_by_parent(0);
         $this->parser->parse('admin/_layout',$data);
     }
     public function load_Category()
